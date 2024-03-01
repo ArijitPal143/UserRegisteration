@@ -29,6 +29,7 @@ Technologies Used:
 Setup:
 
 1.	Set up your Oracle database and configure the database connection properties in src/main/resources/application.properties.
+
 spring.datasource.driver-classname=oracle.jdbc.driver.OracleDriver
 
 spring.datasource.url=jdbc:oracle:thin:@localhost:1521:xstore
