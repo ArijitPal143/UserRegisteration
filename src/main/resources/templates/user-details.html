@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>User Details</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">User Information</h5>
+                <p class="card-text">User name: <span th:if="${user != null}" th:text="${user.username}"></span></p>
+                <p class="card-text">First Name: <span th:if="${user != null}" th:text="${user.firstName}"></span></p>
+                <p class="card-text">Last Name: <span th:if="${user != null}" th:text="${user.lastName}"></span></p>
+                <p class="card-text">Address: <span th:if="${user != null}" th:text="${user.address}"></span></p>
+                <p class="card-text">Phone Number: <span th:if="${user != null}" th:text="${user.phoneNumber}"></span></p>
+                <p class="card-text">Gender: <span th:if="${user != null}" th:text="${user.gender}"></span></p>
+                <p class="card-text">Email: <span th:if="${user != null}" th:text="${user.email}"></span></p>                
+                <form action="/logout" method ="post">
+                    <button type="submit" class="btn btn-primary">Logout</button>
+                </form>
+            </div>
+        </div>
+    </div>  
+    <script>
+        document.getElementById('logoutForm').addEventListener('submit', function() {
+            setTimeout(function() {
+                window.location.href = '/login';
+            }, 1000);
+        });
+    </script>   
+</body>
+</html>
